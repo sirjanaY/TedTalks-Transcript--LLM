@@ -34,7 +34,7 @@ The **goal** of this project is to process TED Talks transcripts to uncover mean
 
 **Source:** [`ted_talks_en.csv`](ted_talks_en.csv)  
 **Type:** CSV — Contains TED Talk metadata and transcripts.  
-**Size:** ~2,500 talks, ~2.2M words total.  
+**Size:** ~4,016 talks
 
 **Key columns:**  
 - `title` — Talk title  
