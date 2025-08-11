@@ -98,10 +98,12 @@ Pipeline steps:
 ![](img1.png)
 
 Training: 80/20
--It evaluates the final model using:
--Binary Cross-Entropy Loss (training loss curve)
+-It evaluates the final model using:Binary Cross-Entropy Loss (training loss curve)
+
 -Micro Precision, Micro Recall, Micro F1 (overall performance)
+
 -Per-label Precision, Recall, F1 (top-performing TED Talk tags)
+
 -Jaccard similarity (multi-label set overlap)
 
 ![](img3.png)
