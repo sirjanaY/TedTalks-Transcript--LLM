@@ -8,8 +8,8 @@ This repository implements a complete NLP pipeline to extract and analyze semant
 ---
 
 ## Overview
-
-The **goal** of this project is to process TED Talks transcripts to uncover meaningful patterns, themes, and speaker insights using **feature extraction powered by LLM embeddings**.  
+s
+The **goal** of this project is to process TED Talks transcripts to uncover meaningful patterns, themes, and speaker insights using **feature extraction powered by LLM embeddings** and Open AI. I think this is a very useful tool to use when you are busy to watch or listen to TedTalks videos but also do not want to miss out on educational resources or an opportunity to learh about peoples shared stories.
 
 **Challenge:** TED Talks cover a vast range of topics, styles, and vocabularies. Extracting consistent, high-quality semantic features for clustering, search, or recommendation requires robust preprocessing, embedding generation, and model evaluation.
 
@@ -21,7 +21,7 @@ The **goal** of this project is to process TED Talks transcripts to uncover mean
 - Visualize embeddings in 2D for interpretability.
 
 **Performance:**  
-- Successfully built a pipeline that processes 2,500+ TED Talks.  
+- Successfully built a pipeline that processes 4,000+ TED Talks.  
 - Generated high-quality semantic embeddings for each talk.  
 - Identified meaningful clusters that align with TED topic categories.  
 - Enabled semantic search to retrieve talks relevant to any user query.
@@ -68,24 +68,15 @@ Steps performed in `data_cleaning.ipynb` and `data_preproccessing.ipynb`:
 
 ### Problem Formulation
 
-**Input:** TED Talk transcripts.  
+**Input:** TED Talk transcripts,url etc.  
 **Output:** *Summary of transcript/ talk
 *Main emotion/theme of the conversation
+* URLs as citation
 
-**Models/Techniques:**  
-- **Embedding Extraction:** LLM API (OpenAI/transformers-based models).  
-- **Clustering:** K-Means, silhouette score tuning.  
-- **Search:** Cosine similarity for semantic retrieval.  
+**Models:**  
+**text-embedding** :small → Converts transcripts into 1,536-dimensional embeddings for clustering, search, and downstream ML tasks.
 
-**Hyperparameters:**  
-- Embedding dimension: 1536 (LLM default).  
-- Number of clusters: Tuned between 5–15.  
-
----
-
-### Training
-
-Since this is an embedding + clustering task, there’s no traditional “training” with loss functions.  
+ Since this is an embedding + clustering task, there’s no traditional “training” with loss functions.  
 
 Pipeline steps:
 1. Send transcripts to LLM API for embeddings (`feature_extraction_API.ipynb`).  
@@ -93,6 +84,26 @@ Pipeline steps:
 3. Run K-Means clustering on embeddings (`transfer_learning_and_clustering.ipynb`).  
 4. Visualize with PCA & t-SNE.  
 
+
+**gpt-4o-mini** : Reads chunks of transcripts and outputs structured JSON (e.g., topics, sentiment, summary)
+    -could not use it for fine-tuning due to time and cost management
+**Multi‑Label Classifier**- SGD training for metrics and loss, visualizations of outputs.
+
+Training: 80/20
+-It evaluates the final model using:
+-Binary Cross-Entropy Loss (training loss curve)
+-Micro Precision, Micro Recall, Micro F1 (overall performance)
+-Per-label Precision, Recall, F1 (top-performing TED Talk tags)
+-Jaccard similarity (multi-label set overlap)
+
+**Techniques**
+ **Embedding Extraction:** LLM API (OpenAI/transformers-based models).  
+ **Clustering:** K-Means, silhouette score tuning.  
+ **Search:** Cosine similarity for semantic retrieval.  
+
+**Hyperparameters:**  
+- Embedding dimension: 1536 (LLM default).  
+- Number of clusters: Tuned between 5–15.  
 ---
 
 ### Performance Comparison
@@ -108,8 +119,20 @@ Pipeline steps:
 - LLM embeddings effectively capture thematic similarity between TED Talks.  
 - Clustering reveals logical topic groupings, useful for recommendation systems.  
 - Semantic search outperforms keyword search in retrieving relevant talks.
+  
 
 ---
+### Overview of Notebooks
+
+- **`data_cleaning.ipynb`** – Removes duplicates, missing values, and unwanted characters from TED Talks dataset.  
+- **`data_preproccessing.ipynb`** – Tokenizes, lemmatizes, and prepares text for modeling.  
+- **`feature_extraction_API.ipynb`** – Uses `text-embedding-3-small` for embeddings and `gpt-4o-mini` for structured feature extraction.  
+- **`transfer_learning_and_clustering.ipynb`** – Clusters embeddings (K-Means) and visualizes topics.  
+- **`embeddings_and_search.ipynb`** – Implements semantic search using embeddings and cosine similarity.  
+- **`post_proccessing.ipynb`** – Creates word frequency, tag distribution, and talk length visualizations.
+- **`analysis_report.ipynb`** – Summarizes metrics, visualizations, and final findings.  
+- **`llm.ipynb`** – Defines OpenAI API settings and helper functions.  
+- **`llm_final.ipynb`** – Trains & evaluates logistic regression on LLM features (loss, precision, recall, F1).  
 
 ### Future Work
 
