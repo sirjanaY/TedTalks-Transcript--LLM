@@ -8,7 +8,7 @@ This repository implements a complete NLP pipeline to extract and analyze semant
 ---
 
 ## Overview
-s
+
 The **goal** of this project is to process TED Talks transcripts to uncover meaningful patterns, themes, and speaker insights using **feature extraction powered by LLM embeddings** and Open AI. I think this is a very useful tool to use when you are busy to watch or listen to TedTalks videos but also do not want to miss out on educational resources or an opportunity to learh about peoples shared stories.
 
 **Challenge:** TED Talks cover a vast range of topics, styles, and vocabularies. Extracting consistent, high-quality semantic features for clustering, search, or recommendation requires robust preprocessing, embedding generation, and model evaluation.
