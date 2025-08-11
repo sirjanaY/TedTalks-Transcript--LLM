@@ -61,16 +61,20 @@ Steps performed in `data_cleaning.ipynb` and `data_preproccessing.ipynb`:
 #### Data Visualization
 
 `post_proccessing.ipynb` explored:
-- **Word frequency plots**: Most common words in TED Talks (excluding stopwords).  
-- **Talk length distribution**: Most talks range between 1,000–2,000 words.  
-- **Top tags**: e.g., "technology", "science", "culture".  
+**Word frequency plots**: Most common words in TED Talks (excluding stopwords).  
+**Talk length distribution**: Most talks range between 1,000–2,000 words.  
+**Top tags**: e.g., "technology", "science", "culture".  
 
 ---
+![](img6.png)
+![](img7.png)
+
 
 ### Problem Formulation
 
 **Input:** TED Talk transcripts,url etc.  
-**Output:** *Summary of transcript/ talk
+**Output:** 
+*Summary of transcript/ talk
 *Main emotion/theme of the conversation
 * URLs as citation
 
@@ -88,14 +92,17 @@ Pipeline steps:
 
 **gpt-4o-mini** : Reads chunks of transcripts and outputs structured JSON (e.g., topics, sentiment, summary)
     -could not use it for fine-tuning due to time and cost management
+    
 **Multi‑Label Classifier**- SGD training for metrics and loss, visualizations of outputs.
-
+![](img1.png)
 Training: 80/20
 -It evaluates the final model using:
 -Binary Cross-Entropy Loss (training loss curve)
 -Micro Precision, Micro Recall, Micro F1 (overall performance)
 -Per-label Precision, Recall, F1 (top-performing TED Talk tags)
 -Jaccard similarity (multi-label set overlap)
+
+![](img3.png)
 
 **Techniques**
  **Embedding Extraction:** LLM API (OpenAI/transformers-based models).  
@@ -112,6 +119,8 @@ Training: 80/20
 - **Clustering quality:** Evaluated with silhouette scores and manual inspection.  
 - **Semantic search:** Manually validated query–result relevance.  
 - **t-SNE Visualization:** Clear topic separation visible for top clusters.  
+![](img10.png)
+![](img9.png)
 
 ---
 
@@ -120,7 +129,8 @@ Training: 80/20
 - LLM embeddings effectively capture thematic similarity between TED Talks.  
 - Clustering reveals logical topic groupings, useful for recommendation systems.  
 - Semantic search outperforms keyword search in retrieving relevant talks.
-  
+
+
 
 ---
 ### Overview of Notebooks
