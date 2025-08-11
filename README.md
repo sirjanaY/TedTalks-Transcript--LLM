@@ -1,6 +1,6 @@
 ![](UTA-DataScience-Logo.png)
 
-# TED Talks Feature Extraction with LLMs
+# TED Talks Transcript- LLMs
 
 **One Sentence Summary**  
 This repository implements a complete NLP pipeline to extract and analyze semantic features from TED Talks transcripts using Large Language Models (LLMs), combined with clustering and visualization techniques for deeper topic understanding.
