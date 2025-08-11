@@ -119,6 +119,7 @@ Training: 80/20
 - **Clustering quality:** Evaluated with silhouette scores and manual inspection.  
 - **Semantic search:** Manually validated query–result relevance.  
 - **t-SNE Visualization:** Clear topic separation visible for top clusters.
+
 ![](img9.png)
 
 
@@ -157,6 +158,9 @@ Example: question = "How do TED speakers describe the role of failure in innovat
 - Deploy as a web app for interactive TED Talk discovery.  
 
 ---
+Citations:
+https://www.kaggle.com/datasets/miguelcorraljr/ted-ultimate-dataset
+https://www.ted.com
 
 ## How to reproduce results
 
@@ -167,3 +171,5 @@ cd ted-llm-feature-extraction
 pip install -r requirements.txt
 
 # TedTalks-Transcript--LLM
+
+
