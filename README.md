@@ -130,6 +130,9 @@ Training: 80/20
 - Clustering reveals logical topic groupings, useful for recommendation systems.  
 - Semantic search outperforms keyword search in retrieving relevant talks.
 
+Example: question = "How do TED speakers describe the role of failure in innovation?"
+
+![](imgg.png)
 
 
 ---
