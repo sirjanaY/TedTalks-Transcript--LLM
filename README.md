@@ -86,7 +86,7 @@ Steps performed in `data_cleaning.ipynb` and `data_preproccessing.ipynb`:
 Pipeline steps:
 1. Send transcripts to LLM API for embeddings (`feature_extraction_API.ipynb`).  
 2. Store embeddings in vector database for retrieval.  
-3. Run K-Means clustering on embeddings (`transfer_learning_and_clustering.ipynb`).  
+3. Run K-Means clustering on embeddings `transfer_learning_and_clustering.ipynb`( Used logistic regression).  
 4. Visualize with PCA & t-SNE.  
 
 
