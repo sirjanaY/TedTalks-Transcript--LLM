@@ -94,7 +94,9 @@ Pipeline steps:
     -could not use it for fine-tuning due to time and cost management
     
 **Multi‑Label Classifier**- SGD training for metrics and loss, visualizations of outputs.
+
 ![](img1.png)
+
 Training: 80/20
 -It evaluates the final model using:
 -Binary Cross-Entropy Loss (training loss curve)
