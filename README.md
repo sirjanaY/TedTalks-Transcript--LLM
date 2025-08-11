@@ -45,6 +45,7 @@ The **goal** of this project is to process TED Talks transcripts to uncover mean
 - `views` — Number of views on TED.com  
 
 ---
+![](img2.png)
 
 #### Preprocessing / Clean up
 
