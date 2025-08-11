@@ -118,9 +118,11 @@ Training: 80/20
 
 - **Clustering quality:** Evaluated with silhouette scores and manual inspection.  
 - **Semantic search:** Manually validated query–result relevance.  
-- **t-SNE Visualization:** Clear topic separation visible for top clusters.  
-![](img10.png)
+- **t-SNE Visualization:** Clear topic separation visible for top clusters.
 ![](img9.png)
+
+
+![](img10.png)
 
 ---
 
