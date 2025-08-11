@@ -69,7 +69,8 @@ Steps performed in `data_cleaning.ipynb` and `data_preproccessing.ipynb`:
 ### Problem Formulation
 
 **Input:** TED Talk transcripts.  
-**Output:** High-dimensional semantic embeddings representing each talk’s content.  
+**Output:** *Summary of transcript/ talk
+*Main emotion/theme of the conversation
 
 **Models/Techniques:**  
 - **Embedding Extraction:** LLM API (OpenAI/transformers-based models).  
